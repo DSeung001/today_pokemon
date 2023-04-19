@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
-import BootScene from '@/game/scenes/BootScene'
-import PlayScene from '@/game/scenes/PlayScene'
+import BootScene from '@/game/bounce/scenes/BootScene'
+import PlayScene from '@/game/bounce/scenes/PlayScene'
 
 function launch(containerId: string) {
   return new Phaser.Game({

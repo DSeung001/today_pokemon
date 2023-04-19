@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import Game from "@/components/BounceGame.vue";
+import Game from "@/components/PokemonGame.vue";
 </script>
 
 <style scoped>

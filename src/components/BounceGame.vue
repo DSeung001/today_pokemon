@@ -10,7 +10,7 @@
   </Suspense>
 </template>
 <script setup lang="ts">
-import PhaserContainer from "@/components/PhaserContainer.vue";</script>
+import PhaserContainer from "@/components/BounceContainer.vue";</script>
 
 <style scoped>
 .placeholder {

@@ -4,7 +4,7 @@ import type { Game } from 'phaser'
 
 let gameInstance: Game | null = null
 const containerId = 'game-container'
-const game = await import('@/game/game')
+const game = await import('@/game/bounce/game')
 
 onMounted(() => {
   gameInstance = game.launch(containerId)
