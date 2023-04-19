@@ -1,12 +1,12 @@
 import Phaser from 'phaser'
-import BootScene from '@/game/bounce/scenes/BootScene'
-import PlayScene from '@/game/bounce/scenes/PlayScene'
+import BootScene from '@/game/pokemon/scenes/BootScene'
+import PlayScene from '@/game/pokemon/scenes/PlayScene'
 
 function launch(containerId: string) {
   return new Phaser.Game({
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
+    width: 959,
+    height: 511,
     parent: containerId,
     physics: {
       default: 'arcade',

@@ -6,7 +6,7 @@ export default class PlayScene extends Scene {
   }
 
   create () {
-    this.add.image(400, 300, 'sky')
+    this.add.image(479, 256, 'background')
 
     const bomb = this.physics.add.image(400, 200, 'bomb')
     bomb.setCollideWorldBounds(true)
@@ -14,10 +14,10 @@ export default class PlayScene extends Scene {
     bomb.setBounce(1)
     bomb.setVelocity(200, 20)
 
-    this.sound.add('thud')
-    this.physics.world.on('worldbounds', () => {
-      this.sound.play('thud', { volume: 0.75 })
-    })
+    // this.sound.add('thud')
+    // this.physics.world.on('worldbounds', () => {
+    //   this.sound.play('thud', { volume: 0.75 })
+    // })
   }
 
   update () {
