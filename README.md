@@ -1,46 +1,68 @@
-# today_pokemon
+# vue-phaser-vite
 
-This template should help get you started developing with Vue 3 in Vite.
+#### Vite boilerplate that integrates Phaser 3 into a Vue 3 project.
 
-## Recommended IDE Setup
+This project template has been set up using **Vite** and includes:
+* *Typescript*
+* *Code Splitting*
+* *Source Minification*
+* *CSS Postprocessing*
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Build Setup
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
+``` bash
+# install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# serve with live reloading on localhost
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
-
-```sh
+# build for production
 npm run build
+
+# serve your production build on localhost
+npm run preview
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Extending the project to your needs
 
-```sh
-npm run lint
-```
+If you want to add more features like *linting*, *unit testing* or *SCSS* to
+your own project, you can do so quite easily with Vite. Read the
+<a href="https://vitejs.dev/guide/" target="_blank">documentation</a> to get
+familiar with the tool. Also take a look at
+<a href="https://github.com/vitejs/awesome-vite#plugins" target="_blank">
+awesome-vite</a> for plugins and more.
+
+## Converting into your own repository
+
+If you want to maintain your own repo based on this boilerplate, you first need
+to detach it from this repo. Here is what you need to do:
+
+1. edit these files and enter your own project info
+	* *package.json*
+	* *README.md*
+	* *index.html*
+
+2. delete *LICENSE* (and perhaps add your own)
+
+3. reinitialize git
+<pre><code>rm -rf .git
+git init
+git add .
+git commit -m "Initial commit"
+</code></pre>
+
+## Sharing data between Vue and Phaser
+
+You might want to expose some game state that lives inside of your Phaser code
+to your Vue components and vice versa, for example a highscore. Here are two
+ways you can achieve sharing state between the frameworks.
+
+* Import a Phaser <a href="https://photonstorm.github.io/phaser3-docs/Phaser.Events.EventEmitter.html" target="_blank">EventEmitter</a> instance in
+both your Vue components and Phaser modules. Both sides can then listen to and
+emit events on that emitter.
+
+* Have both sides share a <a href="https://pinia.vuejs.org/introduction.html" target="_blank">
+Pinia</a> store instance. It works like an event emitter, but can also hold
+state. The Pinia store is nicely integrated into your Vue components and is easily
+accessible on the Phaser side by applying the *useStore* hook.

@@ -43,6 +43,6 @@ const traerDatos = (id) =>{
 }
 h1 {
   font-weight: bold;
-  color: white;
+  color: black;
 }
 </style>s
