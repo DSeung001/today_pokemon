@@ -2,8 +2,7 @@ import { Scene } from 'phaser'
 
 import background from '@/game/pokemon/assets/background.png'
 import bomb from '@/game/pokemon/assets/bomb.png'
-import thudMp3 from '@/game/pokemon/assets/thud.mp3'
-import thudOgg from '@/game/pokemon/assets/thud.ogg'
+import character from '@/game/pokemon/assets/character.png'
 
 export default class BootScene extends Scene {
   constructor () {
@@ -13,7 +12,7 @@ export default class BootScene extends Scene {
   preload () {
     this.load.image('background', background)
     this.load.image('bomb', bomb)
-    this.load.audio('thud', [thudMp3, thudOgg])
+    this.load.image('character', character)
   }
 
   create () {
